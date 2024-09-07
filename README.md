@@ -50,13 +50,62 @@ In addition to the possibility of coding without IDE, through [Playground](https
 
 #### Declaration of Variables 
 
+###### Default Parameter Values and Named Arguments
+
+~~~kotlin
+fun printMessage(message: String): Unit {                              
+    println(message)
+}
+~~~
 <details>
- 
+  - Kotlin functions allow the reception of arguments, and also the type of return expected by the function.<br>
+  - Normally, Unit is used for this return.
 </details>
+<br>
 
+~~~kotlin
+fun printMessageWithPrefix(message: String, prefix: String = "Info") { 
+    println("[$prefix] $message")
+}
+~~~
+<details>
+  - It is also possible to assign a value if it is not passed as a parameter.<br>
+  - It is not necessary to do concatenation for interpolation of variables.
+</details>
+<br>
 
+~~~kotlin
+fun sum(x: Int, y: Int): Int {                                          
+    return x + y
+}
+~~~
+<details>
+  - In this case, the return type expected by this function was passed.
+</details>
+<br>
 
+~~~kotlin
+fun multiply(x: Int, y: Int) = x * y
+~~~
+<details>
+  - In this case, the return was passed in the expected return type
+</details>
+<br>
 
+~~~kotlin
+fun main() {
+    printMessage("Hello")                                                                  
+    printMessageWithPrefix("Hello", "Log")                             
+    printMessageWithPrefix("Hello")                                     
+    printMessageWithPrefix(prefix = "Log", message = "Hello")           
+    println(sum(1, 2))                                                  
+    println(multiply(2, 4))                                             
+}
+~~~
+<details>
+  - our main function, which calls the previous functions, passing the values ​​as parameters.
+</details>
+<br>
 
 #### References
 [Kotlin Documentation](https://kotlinlang.org/docs/home.html) <br>

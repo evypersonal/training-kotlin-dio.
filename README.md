@@ -48,7 +48,7 @@ In addition to the possibility of coding without IDE, through [Playground](https
 </details>
 <hr>
 
-#### Declaration of Variables 
+#### Declaration of Functions 
 
 ###### Default Parameter Values and Named Arguments
 
@@ -104,6 +104,59 @@ fun main() {
 ~~~
 <details>
   - our main function, which calls the previous functions, passing the values ​​as parameters.
+</details>
+<br>
+
+
+###### functions with vararg parameter
+
+~~~kotlin
+fun conc(vararg x: String){
+    for(i in x) print(i)
+}
+
+fun main(){
+    conc("olá","mundo","me","chamo","evy")
+}
+//olámundomechamoevy
+~~~
+
+<details>
+  - Functions with "vararg" parameter allow multiple inputs, as long as they follow the passed parameter
+</details>
+<br>
+
+~~~kotlin
+fun conc(vararg x: String, prefix: String){
+    for(i in x) print(i + prefix)
+}
+
+fun main(){
+    conc("olá","mundo","me","chamo","evy",prefix = " ")
+}
+//olá mundo me chamo evy
+~~~
+
+<details>
+  - It is also possible to assign a prefix, which will be added to the passed parameters
+</details>
+<br>
+
+~~~kotlin
+fun conc(vararg x: String){
+    for(i in x) println(i)
+}
+
+fun test(vararg y: String){
+    conc(*y)
+}
+fun main(){
+    test("olá","mundo","me","chamo","evy")
+}
+~~~
+
+<details>
+ - It is also possible to pass the parameters through a function, in this case, it is necessary to use the "*" with the passed parameter.
 </details>
 <br>
 

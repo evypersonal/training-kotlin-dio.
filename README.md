@@ -46,7 +46,7 @@ In addition to the possibility of coding without IDE, through [Playground](https
  - The body of a function is written within curly braces {  };<br>
  - println(  ) and print(  ) functions print their arguments to standard output;
 </details>
-<hr>
+<hr><hr>
 
 #### Declaration of Functions 
 
@@ -159,6 +159,30 @@ fun main(){
  - It is also possible to pass the parameters through a function, in this case, it is necessary to use the "*" with the passed parameter.
 </details>
 <br>
+
+<hr><hr>
+
+#### Variables
+
+~~~kotlin
+ var a: String = "initial"  
+ println(a)
+ a = "end"
+ println(a)
+ val b: Int = 1             
+ val c = 3
+
+ //initial
+ //end
+ //1
+ //3               
+~~~
+
+<details>
+ - The VAR type variable is mutable, that is, it can reassign its value;<br>
+ - The variable of type VAL, is the opposite, it is immutable, that is, it cannot have its value reassigned;
+</details>
+
 
 #### References
 [Kotlin Documentation](https://kotlinlang.org/docs/home.html) <br>

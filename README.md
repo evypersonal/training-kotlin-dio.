@@ -164,6 +164,7 @@ fun main(){
 
 #### Variables
 
+###### Var and Val
 ~~~kotlin
  var a: String = "initial"  
  println(a)
@@ -182,6 +183,38 @@ fun main(){
  - The VAR type variable is mutable, that is, it can reassign its value;<br>
  - The variable of type VAL, is the opposite, it is immutable, that is, it cannot have its value reassigned;
 </details>
+
+###### Null Safety
+
+~~~kotlin
+var neverNull: String = "This can't be null"            
+neverNull = null
+
+// Will generate an error, due to the type specification being string, and will try to reassign the value as "null"
+~~~                                        
+
+~~~kotlin
+var nullable: String? = "You can keep a null here"      
+nullable = null
+// By entering "?" , we inform you that you can receive the value of type "string" or "null"
+~~~                                         
+
+~~~kotlin
+var inferredNonNull = "The compiler assumes non-null"   
+inferredNonNull = null
+// An error will occur, because by not defining the type that the variable expects, it automatically identifies it as a string, making a null value impossible                                 
+~~~
+
+~~~kotlin
+fun strLength(notNull: String): Int {                   
+    return notNull.length
+}
+
+strLength(neverNull)                                
+strLength(nullable)
+
+~~~
+
 
 
 #### References
